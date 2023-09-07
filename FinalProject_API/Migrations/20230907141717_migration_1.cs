@@ -296,8 +296,8 @@ namespace FinalProject_API.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "1", 0, "8b71b277-f468-477f-b606-bac29b331ef4", "Admin@mail.ru", false, false, null, null, "ADMIN", "AQAAAAIAAYagAAAAECpOKl0FWrA6iyEKzezd5u154mjLMsd8VV3f0VAFLL6xZD26RsTTx5xSyKEi+bwz3A==", null, false, "981e93ed-2dc1-45c8-b48e-bab360cf16ee", false, "Admin" },
-                    { "2", 0, "a65d5164-a86b-403d-aeef-d4c56ee89b96", "User@mail.ru", false, false, null, null, "USER", "AQAAAAIAAYagAAAAELgpEfuhy7z1ROM5py7UO0a4i7cep6HW5AakYrqCl+ST9ZxDL0uIpS+y+8jh3K0axw==", null, false, "ac4bf8af-b22d-4136-93e7-582a02069512", false, "User" }
+                    { "1", 0, "5e304976-2b7e-4985-979d-5f996c5e90a6", "Admin@mail.ru", false, false, null, null, "ADMIN", "AQAAAAIAAYagAAAAEAD2VFKC3VN2tU0B4CxIGHCol9KF8wAA+cp4sn4lbP1n0dwvIH960xDEogcnJWxSKw==", null, false, "b2210475-85e1-45b5-b846-098db27d91ee", false, "admin" },
+                    { "2", 0, "b376fdb8-2de5-428e-b81b-d1233e1fb583", "User@mail.ru", false, false, null, null, "USER", "AQAAAAIAAYagAAAAEPuBT583Map/wNnGtH6628ueuryl27LW/b2iKLxr+IV0RjSLDEWk5pJqc2+imO+cHQ==", null, false, "a6b285c1-e83e-47e7-9517-a36df585045a", false, "user" }
                 });
 
             migrationBuilder.InsertData(

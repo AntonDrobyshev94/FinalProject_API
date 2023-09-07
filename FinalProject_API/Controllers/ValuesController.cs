@@ -3,8 +3,6 @@ using FinalProject_API.Data;
 using FinalProject_API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics.Contracts;
-using System.Reflection.Metadata;
 
 namespace FinalProject_API.Controllers
 {
@@ -477,7 +475,7 @@ namespace FinalProject_API.Controllers
         [HttpGet]
         [Authorize]
         [Route("CheckToken")]
-        public async Task<bool> CheckTokenMethod()
+        public bool CheckTokenMethod()
         {
             if (User.Identity.IsAuthenticated)
             {

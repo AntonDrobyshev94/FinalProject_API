@@ -9,7 +9,6 @@
       "FinalProject_API/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.10",
-          "Microsoft.AspNetCore.Authentication.Negotiate": "7.0.7",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.10",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "7.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10",
@@ -69,31 +68,6 @@
           "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
             "assemblyVersion": "7.0.10.0",
             "fileVersion": "7.0.1023.36439"
-          }
-        }
-      },
-      "Microsoft.AspNetCore.Authentication.Negotiate/7.0.7": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Connections.Abstractions": "7.0.7",
-          "Microsoft.Extensions.Caching.Memory": "7.0.0",
-          "System.DirectoryServices.Protocols": "7.0.1"
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.AspNetCore.Authentication.Negotiate.dll": {
-            "assemblyVersion": "7.0.7.0",
-            "fileVersion": "7.0.723.27408"
-          }
-        }
-      },
-      "Microsoft.AspNetCore.Connections.Abstractions/7.0.7": {
-        "dependencies": {
-          "Microsoft.Extensions.Features": "7.0.7",
-          "System.IO.Pipelines": "7.0.0"
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.AspNetCore.Connections.Abstractions.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.723.27408"
           }
         }
       },
@@ -331,14 +305,6 @@
           }
         }
       },
-      "Microsoft.Extensions.Features/7.0.7": {
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Features.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.723.27408"
-          }
-        }
-      },
       "Microsoft.Extensions.Identity.Core/7.0.10": {
         "dependencies": {
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "7.0.10",
@@ -564,34 +530,6 @@
         }
       },
       "System.Diagnostics.DiagnosticSource/5.0.0": {},
-      "System.DirectoryServices.Protocols/7.0.1": {
-        "runtime": {
-          "lib/net7.0/System.DirectoryServices.Protocols.dll": {
-            "assemblyVersion": "7.0.0.1",
-            "fileVersion": "7.0.723.27404"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/linux/lib/net7.0/System.DirectoryServices.Protocols.dll": {
-            "rid": "linux",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.1",
-            "fileVersion": "7.0.723.27404"
-          },
-          "runtimes/osx/lib/net7.0/System.DirectoryServices.Protocols.dll": {
-            "rid": "osx",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.1",
-            "fileVersion": "7.0.723.27404"
-          },
-          "runtimes/win/lib/net7.0/System.DirectoryServices.Protocols.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.1",
-            "fileVersion": "7.0.723.27404"
-          }
-        }
-      },
       "System.Drawing.Common/5.0.0": {
         "dependencies": {
           "Microsoft.Win32.SystemEvents": "5.0.0"
@@ -646,7 +584,6 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.IO.Pipelines/7.0.0": {},
       "System.Memory/4.5.4": {},
       "System.Memory.Data/1.0.2": {
         "dependencies": {
@@ -832,20 +769,6 @@
       "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.10",
       "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.7.0.10.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Authentication.Negotiate/7.0.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-nEjXY0W+UA8JBjTGwRJ7BhjC8FiPk8HPgpiqgMEYy2kw8I7hS769z2od4YxCrDo0GFfw1GMturJpIiNkGNhEyw==",
-      "path": "microsoft.aspnetcore.authentication.negotiate/7.0.7",
-      "hashPath": "microsoft.aspnetcore.authentication.negotiate.7.0.7.nupkg.sha512"
-    },
-    "Microsoft.AspNetCore.Connections.Abstractions/7.0.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-fdmFTKuzEjq3O86WokH82COLrQVrf/Dv0DmpOgiV2EaO7jiQ3Kq66Ztsdm0f+c/7X2BO2Af5URUdOTP6ZI7WoQ==",
-      "path": "microsoft.aspnetcore.connections.abstractions/7.0.7",
-      "hashPath": "microsoft.aspnetcore.connections.abstractions.7.0.7.nupkg.sha512"
-    },
     "Microsoft.AspNetCore.Cryptography.Internal/7.0.10": {
       "type": "package",
       "serviceable": true,
@@ -999,13 +922,6 @@
       "sha512": "sha512-oONNYd71J3LzkWc4fUHl3SvMfiQMYUCo/mDHDEu76hYYxdhdrPYv6fvGv9nnKVyhE9P0h20AU8RZB5OOWQcAXg==",
       "path": "microsoft.extensions.dependencymodel/7.0.0",
       "hashPath": "microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Features/7.0.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Xz60hIQVYkZHJMCYBi7KgyHUs08IPaxwkFgFesIhU0w04Qs5NerYUKu00p8tQmczIa8LzI4D8vR5EeXzlnAB7w==",
-      "path": "microsoft.extensions.features/7.0.7",
-      "hashPath": "microsoft.extensions.features.7.0.7.nupkg.sha512"
     },
     "Microsoft.Extensions.Identity.Core/7.0.10": {
       "type": "package",
@@ -1189,13 +1105,6 @@
       "path": "system.diagnostics.diagnosticsource/5.0.0",
       "hashPath": "system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512"
     },
-    "System.DirectoryServices.Protocols/7.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-t9hsL+UYRzNs30pnT2Tdx6ngX8McFUjru0a0ekNgu/YXfkXN+dx5OvSEv0/p7H2q3pdJLH7TJPWX7e55J8QB9A==",
-      "path": "system.directoryservices.protocols/7.0.1",
-      "hashPath": "system.directoryservices.protocols.7.0.1.nupkg.sha512"
-    },
     "System.Drawing.Common/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1230,13 +1139,6 @@
       "sha512": "sha512-3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
       "path": "system.io/4.3.0",
       "hashPath": "system.io.4.3.0.nupkg.sha512"
-    },
-    "System.IO.Pipelines/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-jRn6JYnNPW6xgQazROBLSfpdoczRw694vO5kKvMcNnpXuolEixUyw6IBuBs2Y2mlSX/LdLvyyWmfXhaI3ND1Yg==",
-      "path": "system.io.pipelines/7.0.0",
-      "hashPath": "system.io.pipelines.7.0.0.nupkg.sha512"
     },
     "System.Memory/4.5.4": {
       "type": "package",

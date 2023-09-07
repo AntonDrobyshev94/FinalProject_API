@@ -35,17 +35,17 @@ namespace FinalProject_API.ContextFolder
                 new IdentityRole() { Id = "2", Name = "User", ConcurrencyStamp = "2", NormalizedName = "User" }
                 );
 
-            string password = "Admin";
+            string password = "admin";
             var passwordHasher = new PasswordHasher<User>();
             string hashedPassword = passwordHasher.HashPassword(null, password);
-            string passwordUser = "User";
+            string passwordUser = "user";
             var passwordHasherUser = new PasswordHasher<User>();
             string hashedPasswordUser = passwordHasherUser.HashPassword(null, passwordUser);
 
             builder.Entity<User>().HasData
                 (
-                new User() { Id = "1", UserName = "Admin", PasswordHash = hashedPassword, NormalizedUserName = "ADMIN", Email = "Admin@mail.ru" },
-                new User() { Id = "2", UserName = "User", PasswordHash = hashedPasswordUser, NormalizedUserName = "USER", Email = "User@mail.ru" }
+                new User() { Id = "1", UserName = "admin", PasswordHash = hashedPassword, NormalizedUserName = "ADMIN", Email = "Admin@mail.ru" },
+                new User() { Id = "2", UserName = "user", PasswordHash = hashedPasswordUser, NormalizedUserName = "USER", Email = "User@mail.ru" }
                 );
 
             builder.Entity<IdentityUserRole<string>>().HasData

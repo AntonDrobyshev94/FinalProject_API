@@ -91,31 +91,31 @@ namespace FinalProject_API.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8b71b277-f468-477f-b606-bac29b331ef4",
+                            ConcurrencyStamp = "5e304976-2b7e-4985-979d-5f996c5e90a6",
                             Email = "Admin@mail.ru",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAECpOKl0FWrA6iyEKzezd5u154mjLMsd8VV3f0VAFLL6xZD26RsTTx5xSyKEi+bwz3A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAD2VFKC3VN2tU0B4CxIGHCol9KF8wAA+cp4sn4lbP1n0dwvIH960xDEogcnJWxSKw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "981e93ed-2dc1-45c8-b48e-bab360cf16ee",
+                            SecurityStamp = "b2210475-85e1-45b5-b846-098db27d91ee",
                             TwoFactorEnabled = false,
-                            UserName = "Admin"
+                            UserName = "admin"
                         },
                         new
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a65d5164-a86b-403d-aeef-d4c56ee89b96",
+                            ConcurrencyStamp = "b376fdb8-2de5-428e-b81b-d1233e1fb583",
                             Email = "User@mail.ru",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "USER",
-                            PasswordHash = "AQAAAAIAAYagAAAAELgpEfuhy7z1ROM5py7UO0a4i7cep6HW5AakYrqCl+ST9ZxDL0uIpS+y+8jh3K0axw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPuBT583Map/wNnGtH6628ueuryl27LW/b2iKLxr+IV0RjSLDEWk5pJqc2+imO+cHQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ac4bf8af-b22d-4136-93e7-582a02069512",
+                            SecurityStamp = "a6b285c1-e83e-47e7-9517-a36df585045a",
                             TwoFactorEnabled = false,
-                            UserName = "User"
+                            UserName = "user"
                         });
                 });
 

@@ -78,44 +78,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Microsoft.AspNetCore.Authentication.Negotiate/7.0.7": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Connections.Abstractions": "7.0.7",
-          "Microsoft.Extensions.Caching.Memory": "7.0.0",
-          "System.DirectoryServices.Protocols": "7.0.1"
-        },
-        "compile": {
-          "lib/net7.0/Microsoft.AspNetCore.Authentication.Negotiate.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.AspNetCore.Authentication.Negotiate.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "Microsoft.AspNetCore.Connections.Abstractions/7.0.7": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Features": "7.0.7",
-          "System.IO.Pipelines": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/Microsoft.AspNetCore.Connections.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.AspNetCore.Connections.Abstractions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.AspNetCore.Cryptography.Internal/7.0.10": {
         "type": "package",
         "compile": {
@@ -510,19 +472,6 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Features/7.0.7": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Microsoft.Extensions.Features.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Features.dll": {
-            "related": ".xml"
-          }
         }
       },
       "Microsoft.Extensions.Identity.Core/7.0.10": {
@@ -932,36 +881,6 @@
           }
         }
       },
-      "System.DirectoryServices.Protocols/7.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.DirectoryServices.Protocols.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.DirectoryServices.Protocols.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/linux/lib/net7.0/System.DirectoryServices.Protocols.dll": {
-            "assetType": "runtime",
-            "rid": "linux"
-          },
-          "runtimes/osx/lib/net7.0/System.DirectoryServices.Protocols.dll": {
-            "assetType": "runtime",
-            "rid": "osx"
-          },
-          "runtimes/win/lib/net7.0/System.DirectoryServices.Protocols.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
       "System.Drawing.Common/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -1044,22 +963,6 @@
           "ref/netstandard1.5/System.IO.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "System.IO.Pipelines/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.IO.Pipelines.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.IO.Pipelines.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
         }
       },
       "System.Memory/4.5.4": {
@@ -1470,42 +1373,6 @@
         "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
         "microsoft.aspnetcore.authentication.jwtbearer.7.0.10.nupkg.sha512",
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
-      ]
-    },
-    "Microsoft.AspNetCore.Authentication.Negotiate/7.0.7": {
-      "sha512": "nEjXY0W+UA8JBjTGwRJ7BhjC8FiPk8HPgpiqgMEYy2kw8I7hS769z2od4YxCrDo0GFfw1GMturJpIiNkGNhEyw==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.authentication.negotiate/7.0.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net7.0/Microsoft.AspNetCore.Authentication.Negotiate.dll",
-        "lib/net7.0/Microsoft.AspNetCore.Authentication.Negotiate.xml",
-        "microsoft.aspnetcore.authentication.negotiate.7.0.7.nupkg.sha512",
-        "microsoft.aspnetcore.authentication.negotiate.nuspec"
-      ]
-    },
-    "Microsoft.AspNetCore.Connections.Abstractions/7.0.7": {
-      "sha512": "fdmFTKuzEjq3O86WokH82COLrQVrf/Dv0DmpOgiV2EaO7jiQ3Kq66Ztsdm0f+c/7X2BO2Af5URUdOTP6ZI7WoQ==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.connections.abstractions/7.0.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net462/Microsoft.AspNetCore.Connections.Abstractions.dll",
-        "lib/net462/Microsoft.AspNetCore.Connections.Abstractions.xml",
-        "lib/net7.0/Microsoft.AspNetCore.Connections.Abstractions.dll",
-        "lib/net7.0/Microsoft.AspNetCore.Connections.Abstractions.xml",
-        "lib/netstandard2.0/Microsoft.AspNetCore.Connections.Abstractions.dll",
-        "lib/netstandard2.0/Microsoft.AspNetCore.Connections.Abstractions.xml",
-        "lib/netstandard2.1/Microsoft.AspNetCore.Connections.Abstractions.dll",
-        "lib/netstandard2.1/Microsoft.AspNetCore.Connections.Abstractions.xml",
-        "microsoft.aspnetcore.connections.abstractions.7.0.7.nupkg.sha512",
-        "microsoft.aspnetcore.connections.abstractions.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/7.0.10": {
@@ -2042,25 +1909,6 @@
         "microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512",
         "microsoft.extensions.dependencymodel.nuspec",
         "useSharedDesignerContext.txt"
-      ]
-    },
-    "Microsoft.Extensions.Features/7.0.7": {
-      "sha512": "Xz60hIQVYkZHJMCYBi7KgyHUs08IPaxwkFgFesIhU0w04Qs5NerYUKu00p8tQmczIa8LzI4D8vR5EeXzlnAB7w==",
-      "type": "package",
-      "path": "microsoft.extensions.features/7.0.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net462/Microsoft.Extensions.Features.dll",
-        "lib/net462/Microsoft.Extensions.Features.xml",
-        "lib/net7.0/Microsoft.Extensions.Features.dll",
-        "lib/net7.0/Microsoft.Extensions.Features.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Features.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Features.xml",
-        "microsoft.extensions.features.7.0.7.nupkg.sha512",
-        "microsoft.extensions.features.nuspec"
       ]
     },
     "Microsoft.Extensions.Identity.Core/7.0.10": {
@@ -2719,42 +2567,6 @@
         "version.txt"
       ]
     },
-    "System.DirectoryServices.Protocols/7.0.1": {
-      "sha512": "t9hsL+UYRzNs30pnT2Tdx6ngX8McFUjru0a0ekNgu/YXfkXN+dx5OvSEv0/p7H2q3pdJLH7TJPWX7e55J8QB9A==",
-      "type": "package",
-      "path": "system.directoryservices.protocols/7.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.DirectoryServices.Protocols.targets",
-        "lib/net462/_._",
-        "lib/net6.0/System.DirectoryServices.Protocols.dll",
-        "lib/net6.0/System.DirectoryServices.Protocols.xml",
-        "lib/net7.0/System.DirectoryServices.Protocols.dll",
-        "lib/net7.0/System.DirectoryServices.Protocols.xml",
-        "lib/netstandard2.0/System.DirectoryServices.Protocols.dll",
-        "lib/netstandard2.0/System.DirectoryServices.Protocols.xml",
-        "runtimes/linux/lib/net6.0/System.DirectoryServices.Protocols.dll",
-        "runtimes/linux/lib/net6.0/System.DirectoryServices.Protocols.xml",
-        "runtimes/linux/lib/net7.0/System.DirectoryServices.Protocols.dll",
-        "runtimes/linux/lib/net7.0/System.DirectoryServices.Protocols.xml",
-        "runtimes/osx/lib/net6.0/System.DirectoryServices.Protocols.dll",
-        "runtimes/osx/lib/net6.0/System.DirectoryServices.Protocols.xml",
-        "runtimes/osx/lib/net7.0/System.DirectoryServices.Protocols.dll",
-        "runtimes/osx/lib/net7.0/System.DirectoryServices.Protocols.xml",
-        "runtimes/win/lib/net6.0/System.DirectoryServices.Protocols.dll",
-        "runtimes/win/lib/net6.0/System.DirectoryServices.Protocols.xml",
-        "runtimes/win/lib/net7.0/System.DirectoryServices.Protocols.dll",
-        "runtimes/win/lib/net7.0/System.DirectoryServices.Protocols.xml",
-        "system.directoryservices.protocols.7.0.1.nupkg.sha512",
-        "system.directoryservices.protocols.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "System.Drawing.Common/5.0.0": {
       "sha512": "SztFwAnpfKC8+sEKXAFxCBWhKQaEd97EiOL7oZJZP56zbqnLpmxACWA8aGseaUExciuEAUuR9dY8f7HkTRAdnw==",
       "type": "package",
@@ -2985,33 +2797,6 @@
         "ref/xamarinwatchos10/_._",
         "system.io.4.3.0.nupkg.sha512",
         "system.io.nuspec"
-      ]
-    },
-    "System.IO.Pipelines/7.0.0": {
-      "sha512": "jRn6JYnNPW6xgQazROBLSfpdoczRw694vO5kKvMcNnpXuolEixUyw6IBuBs2Y2mlSX/LdLvyyWmfXhaI3ND1Yg==",
-      "type": "package",
-      "path": "system.io.pipelines/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.IO.Pipelines.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.IO.Pipelines.targets",
-        "lib/net462/System.IO.Pipelines.dll",
-        "lib/net462/System.IO.Pipelines.xml",
-        "lib/net6.0/System.IO.Pipelines.dll",
-        "lib/net6.0/System.IO.Pipelines.xml",
-        "lib/net7.0/System.IO.Pipelines.dll",
-        "lib/net7.0/System.IO.Pipelines.xml",
-        "lib/netstandard2.0/System.IO.Pipelines.dll",
-        "lib/netstandard2.0/System.IO.Pipelines.xml",
-        "system.io.pipelines.7.0.0.nupkg.sha512",
-        "system.io.pipelines.nuspec",
-        "useSharedDesignerContext.txt"
       ]
     },
     "System.Memory/4.5.4": {
@@ -4029,7 +3814,6 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.10",
-      "Microsoft.AspNetCore.Authentication.Negotiate >= 7.0.7",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.10",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 7.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.10",
@@ -4084,10 +3868,6 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[7.0.10, )"
-          },
-          "Microsoft.AspNetCore.Authentication.Negotiate": {
-            "target": "Package",
-            "version": "[7.0.7, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
