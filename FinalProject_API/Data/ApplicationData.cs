@@ -36,7 +36,6 @@ namespace FinalProject_API.Data
         /// По окончанию производится сохранение методом
         /// SaveChanges.
         /// </summary>
-        /// <param name="contact"></param>
         public void AddApplications(Application application)
         {
             context.Requests.Add(application);
@@ -437,10 +436,7 @@ namespace FinalProject_API.Data
             {
                 foreach (var contact in context.Contacts)
                 {
-                    if (concreteContacts.Id == contact.Id)
-                    {
-                        concreteContacts = contact;
-                    }
+                    concreteContacts = contact;
                 }
                 concreteContacts.Address = contacts.Address;
                 concreteContacts.Telephone = contacts.Telephone;
