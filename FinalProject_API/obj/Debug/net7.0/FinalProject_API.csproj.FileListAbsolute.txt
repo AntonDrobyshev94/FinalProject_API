@@ -4,8 +4,6 @@ F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\FinalProject_API.Assemb
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\FinalProject_API.AssemblyInfo.cs
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\FinalProject_API.csproj.CoreCompileInputs.cache
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\FinalProject_API.MvcApplicationPartsAssemblyInfo.cache
-F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\FinalProject_API.RazorAssemblyInfo.cache
-F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\FinalProject_API.RazorAssemblyInfo.cs
 F:\C#\FinalProject_API\FinalProject_API\bin\Debug\net7.0\appsettings.Development.json
 F:\C#\FinalProject_API\FinalProject_API\bin\Debug\net7.0\appsettings.json
 F:\C#\FinalProject_API\FinalProject_API\bin\Debug\net7.0\FinalProject_API.staticwebassets.runtime.json
@@ -75,12 +73,11 @@ F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\staticwebassets\msbuild
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\staticwebassets.pack.json
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\staticwebassets.build.json
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\staticwebassets.development.json
-F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\scopedcss\bundle\FinalProject_API.styles.css
-F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\scopedcss\projectbundle\FinalProject_API.bundle.scp.css
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\FinalProject_API.csproj.CopyComplete
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\FinalProject_API.dll
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\refint\FinalProject_API.dll
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\FinalProject_API.pdb
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\FinalProject_API.genruntimeconfig.cache
 F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\ref\FinalProject_API.dll
+F:\C#\FinalProject_API\FinalProject_API\obj\Debug\net7.0\FinalProject_API.sourcelink.json

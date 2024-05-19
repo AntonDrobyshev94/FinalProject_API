@@ -1,6 +1,8 @@
-﻿using FinalProject_API.AuthFinalProjectApp;
+﻿using Azure.Core;
+using FinalProject_API.AuthFinalProjectApp;
 using FinalProject_API.ContextFolder;
 using FinalProject_API.Models;
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -15,18 +17,18 @@ namespace FinalProject_API.Data
     public class ApplicationData
     {
         private readonly UserManager<User> _userManager;
-        private readonly DataContext context;
-        DbContextOptions<DataContext> options; 
-        public IConfiguration _configuration { get; }
+        private readonly DataContext _context;
+        private DbContextOptions<DataContext> _options; 
+        public IConfiguration Configuration { get; }
 
         public ApplicationData(DataContext context, UserManager<User> userManager,
                                 IConfiguration configuration, 
                                 DbContextOptions<DataContext> options)
         {
-            this.context = context;
+            _context = context;
             _userManager = userManager;
-            _configuration = configuration;
-            this.options = options;
+            Configuration = configuration;
+            _options = options;
         }
 
         #region Application
@@ -38,8 +40,8 @@ namespace FinalProject_API.Data
         /// </summary>
         public void AddApplications(Application application)
         {
-            context.Requests.Add(application);
-            context.SaveChanges();
+            _context.Requests.Add(application);
+            _context.SaveChanges();
         }
 
         /// <summary>
@@ -50,7 +52,7 @@ namespace FinalProject_API.Data
         /// <returns></returns>
         public IEnumerable<IApplication> GetApplications()
         {
-            return this.context.Requests;
+            return this._context.Requests;
         }
 
         /// <summary>
@@ -71,7 +73,7 @@ namespace FinalProject_API.Data
         /// <param name="id"></param>
         public async void DeleteApplication(int id)
         {
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 Application application = await context.Requests.FirstOrDefaultAsync(x => x.ID == id);
                 if (application != null)
@@ -93,7 +95,7 @@ namespace FinalProject_API.Data
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public async Task<Application> GetApplicationByID(int id) => await context.Requests.FirstOrDefaultAsync(x => x.ID == id);
+        public async Task<Application> GetApplicationByID(int id) => await _context.Requests.FirstOrDefaultAsync(x => x.ID == id);
 
         /// <summary>
         /// Асинхронный метод изменения заявки невозвращаемого типа,
@@ -112,7 +114,7 @@ namespace FinalProject_API.Data
         /// <param name="contact"></param>
         public async void ChangeStatus(Application application)
         {
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 Application concreteApplication = await context.Requests.FirstOrDefaultAsync(x => x.ID == application.ID);
                 concreteApplication.Status = application.Status;
@@ -130,8 +132,8 @@ namespace FinalProject_API.Data
         /// <param name="contact"></param>
         public void AddProjects(ProjectModel project)
         {
-            context.Projects.Add(project);
-            context.SaveChanges();
+            _context.Projects.Add(project);
+            _context.SaveChanges();
         }
 
         /// <summary>
@@ -151,7 +153,7 @@ namespace FinalProject_API.Data
         /// <param name="contact"></param>
         public async void ChangeProjects(ProjectModel project)
         {
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 ProjectModel concreteProject = await context.Projects.FirstOrDefaultAsync(x => x.Id == project.Id);
                 concreteProject.ImageName = project.ImageName;
@@ -169,7 +171,7 @@ namespace FinalProject_API.Data
         /// <returns></returns>
         public IEnumerable<IProjectModel> GetProjects()
         {
-            return this.context.Projects;
+            return this._context.Projects;
         }
 
         /// <summary>
@@ -190,7 +192,7 @@ namespace FinalProject_API.Data
         /// <param name="id"></param>
         public async void DeleteProject(int id)
         {
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 ProjectModel project = await context.Projects.FirstOrDefaultAsync(x => x.Id == id);
                 if (project != null)
@@ -212,7 +214,7 @@ namespace FinalProject_API.Data
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<ProjectModel> GetProjectByID(int id) => await context.Projects.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<ProjectModel> GetProjectByID(int id) => await _context.Projects.FirstOrDefaultAsync(x => x.Id == id);
         #endregion
         #region Services
         /// <summary>
@@ -224,8 +226,8 @@ namespace FinalProject_API.Data
         /// <param name="contact"></param>
         public void AddService(Service service)
         {
-            context.Services.Add(service);
-            context.SaveChanges();
+            _context.Services.Add(service);
+            _context.SaveChanges();
         }
 
         /// <summary>
@@ -244,7 +246,7 @@ namespace FinalProject_API.Data
         /// <param name="contact"></param>
         public async void ChangeService(Service service)
         {
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 Service concreteService = await context.Services.FirstOrDefaultAsync(x => x.Id == service.Id);
                 concreteService.Description = service.Description;
@@ -261,7 +263,7 @@ namespace FinalProject_API.Data
         /// <returns></returns>
         public IEnumerable<IService> GetServices()
         {
-            return this.context.Services;
+            return this._context.Services;
         }
 
         /// <summary>
@@ -282,7 +284,7 @@ namespace FinalProject_API.Data
         /// <param name="id"></param>
         public async void DeleteService(int id)
         {
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 Service service = await context.Services.FirstOrDefaultAsync(x => x.Id == id);
                 if (service != null)
@@ -304,7 +306,7 @@ namespace FinalProject_API.Data
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<Service> GetServiceByID(int id) => await context.Services.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<Service> GetServiceByID(int id) => await _context.Services.FirstOrDefaultAsync(x => x.Id == id);
         #endregion
         #region Blog
         /// <summary>
@@ -316,8 +318,8 @@ namespace FinalProject_API.Data
         /// <param name="blog"></param>
         public void AddBlog(BlogModel blog)
         {
-            context.Blogs.Add(blog);
-            context.SaveChanges();
+            _context.Blogs.Add(blog);
+            _context.SaveChanges();
         }
 
         /// <summary>
@@ -336,7 +338,7 @@ namespace FinalProject_API.Data
         /// <param name="blog"></param>
         public async void ChangeBlog(BlogModel blog)
         {
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 BlogModel concreteBlog = await context.Blogs.FirstOrDefaultAsync(x => x.Id == blog.Id);
                 concreteBlog.Description = blog.Description;
@@ -355,7 +357,7 @@ namespace FinalProject_API.Data
         /// <returns></returns>
         public IEnumerable<IBlogModel> GetBlog()
         {
-            return this.context.Blogs;
+            return this._context.Blogs;
         }
 
         /// <summary>
@@ -376,7 +378,7 @@ namespace FinalProject_API.Data
         /// <param name="id"></param>
         public async void DeleteBlog(int id)
         {
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 BlogModel blog = await context.Blogs.FirstOrDefaultAsync(x => x.Id == id);
                 if (blog != null)
@@ -398,7 +400,7 @@ namespace FinalProject_API.Data
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public async Task<BlogModel> GetBlogByID(int id) => await context.Blogs.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<BlogModel> GetBlogByID(int id) => await _context.Blogs.FirstOrDefaultAsync(x => x.Id == id);
         #endregion
         #region Contacts
         /// <summary>
@@ -408,7 +410,7 @@ namespace FinalProject_API.Data
         public Contacts GetContacts()
         {
             Contacts concreteContacts = new Contacts();
-            foreach (var contacts in this.context.Contacts)
+            foreach (var contacts in this._context.Contacts)
             {
                 concreteContacts = contacts;
             }
@@ -432,7 +434,7 @@ namespace FinalProject_API.Data
         public async void ChangeContacts(Contacts contacts)
         {
             Contacts concreteContacts = new Contacts();
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 foreach (var contact in context.Contacts)
                 {
@@ -456,8 +458,8 @@ namespace FinalProject_API.Data
         /// <param name="contact"></param>
         public void AddLink(LinkModel link)
         {
-            context.Links.Add(link);
-            context.SaveChanges();
+            _context.Links.Add(link);
+            _context.SaveChanges();
         }
 
         /// <summary>
@@ -476,7 +478,7 @@ namespace FinalProject_API.Data
         /// <param name="contact"></param>
         public async void ChangeLink(LinkModel link)
         {
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 LinkModel concreteLink = await context.Links.FirstOrDefaultAsync(x => x.Id == link.Id);
                 concreteLink.ImageName = link.ImageName;
@@ -493,7 +495,7 @@ namespace FinalProject_API.Data
         /// <returns></returns>
         public IEnumerable<ILinkModel> GetLinks()
         {
-            return this.context.Links;
+            return this._context.Links;
         }
 
         /// <summary>
@@ -514,7 +516,7 @@ namespace FinalProject_API.Data
         /// <param name="id"></param>
         public async void DeleteLink(int id)
         {
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 LinkModel link = await context.Links.FirstOrDefaultAsync(x => x.Id == id);
                 if (link != null)
@@ -536,7 +538,7 @@ namespace FinalProject_API.Data
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<LinkModel> GetLinkByID(int id) => await context.Links.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<LinkModel> GetLinkByID(int id) => await _context.Links.FirstOrDefaultAsync(x => x.Id == id);
         #endregion
         #region Title
         /// <summary>
@@ -554,7 +556,7 @@ namespace FinalProject_API.Data
         public TitleModel GetTitle()
         {
             TitleModel concreteTitle = new TitleModel();
-            foreach (var title in this.context.Title)
+            foreach (var title in this._context.Title)
             {
                 concreteTitle = title;
             }
@@ -578,7 +580,7 @@ namespace FinalProject_API.Data
         public async void ChangeTitle(TitleModel title)
         {
             TitleModel concreteTitle = new TitleModel();
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 foreach (var titleModel in context.Title)
                 {
@@ -605,7 +607,7 @@ namespace FinalProject_API.Data
         /// <returns></returns>
         public IEnumerable<ITagModel> GetTags()
         {
-            return this.context.Tags;
+            return this._context.Tags;
         }
 
         /// <summary>
@@ -617,8 +619,8 @@ namespace FinalProject_API.Data
         /// <param name="contact"></param>
         public void AddTag(TagModel tag)
         {
-            context.Tags.Add(tag);
-            context.SaveChanges();
+            _context.Tags.Add(tag);
+            _context.SaveChanges();
         }
 
         /// <summary>
@@ -639,7 +641,7 @@ namespace FinalProject_API.Data
         /// <param name="id"></param>
         public async void DeleteTag(int id)
         {
-            using (var context = new DataContext(options))
+            using (var context = new DataContext(_options))
             {
                 TagModel tag = await context.Tags.FirstOrDefaultAsync(x => x.ID == id);
                 if (tag != null)
@@ -703,7 +705,7 @@ namespace FinalProject_API.Data
                 UserName = loginData.UserName
             };
 
-            User? user = await context.Users.FirstOrDefaultAsync(p => p.UserName == newUser.UserName);
+            User? user = await _context.Users.FirstOrDefaultAsync(p => p.UserName == newUser.UserName);
 
             if (user is null)
             {
@@ -721,7 +723,7 @@ namespace FinalProject_API.Data
             }
             string id = user.Id;
             List<string> idCol = new List<string>();
-            foreach (var item in context.UserRoles)
+            foreach (var item in _context.UserRoles)
             {
                 if (item.UserId == id)
                 {
@@ -783,13 +785,13 @@ namespace FinalProject_API.Data
                             new Claim(ClaimTypes.Role, "Admin")
                         };
                 var jwt = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"]!,
-                audience: _configuration["Jwt:Audience"]!,
+                issuer: Configuration["Jwt:Issuer"]!,
+                audience: Configuration["Jwt:Audience"]!,
                 claims: claims,
                 expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(2)),
                 signingCredentials: new SigningCredentials(
                     new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(_configuration["Jwt:Secret"]!)
+                        Encoding.UTF8.GetBytes(Configuration["Jwt:Secret"]!)
                     ),
                     SecurityAlgorithms.HmacSha256));
                 return new JwtSecurityTokenHandler().WriteToken(jwt);
@@ -801,13 +803,13 @@ namespace FinalProject_API.Data
                             new Claim(ClaimTypes.Role, "User")
                         };
                 var jwt = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"]!,
-                audience: _configuration["Jwt:Audience"]!,
+                issuer: Configuration["Jwt:Issuer"]!,
+                audience: Configuration["Jwt:Audience"]!,
                 claims: claims,
                 expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(2)),
                 signingCredentials: new SigningCredentials(
                     new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(_configuration["Jwt:Secret"]!)
+                        Encoding.UTF8.GetBytes(Configuration["Jwt:Secret"]!)
                     ),
                     SecurityAlgorithms.HmacSha256));
                 return new JwtSecurityTokenHandler().WriteToken(jwt);

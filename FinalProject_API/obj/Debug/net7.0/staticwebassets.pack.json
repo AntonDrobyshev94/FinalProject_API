@@ -1,20 +1,8 @@
 {
   "Files": [
     {
-      "Id": "F:\\C#\\FinalProject_API\\FinalProject_API\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\FinalProject_API.bundle.scp.css",
-      "PackagePath": "staticwebassets\\FinalProject_API.bundle.scp.css"
-    },
-    {
-      "Id": "F:\\C#\\FinalProject_API\\FinalProject_API\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
-    },
-    {
       "Id": "F:\\C#\\FinalProject_API\\FinalProject_API\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
-    },
-    {
-      "Id": "F:\\C#\\FinalProject_API\\FinalProject_API\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
       "Id": "F:\\C#\\FinalProject_API\\FinalProject_API\\wwwroot\\lib\\bootstrap\\LICENSE",

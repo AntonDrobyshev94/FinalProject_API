@@ -2,6 +2,7 @@
 using FinalProject_API.Data;
 using FinalProject_API.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_API.Controllers
@@ -11,11 +12,12 @@ namespace FinalProject_API.Controllers
     public class ValuesController : ControllerBase
     {
         private readonly ApplicationData repositoryData;
-        public IConfiguration Configuration { get; }
+
         public ValuesController(ApplicationData repositoryData)
         {
             this.repositoryData = repositoryData;
         }
+
 
         #region Application
         /// <summary>
